@@ -7,6 +7,9 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PerfilEstudianteComponent } from './perfil.estudiante/perfil.estudiante.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 
@@ -18,7 +21,9 @@ import { PerfilEstudianteComponent } from './perfil.estudiante/perfil.estudiante
   declarations: [
     AppComponent,
     PerfilEstudianteComponent,
-    
+    LoginComponent,
+    RegisterComponent,
+    ForgotPasswordComponent
    
    
   ],
