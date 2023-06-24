@@ -1,19 +1,18 @@
-import { NgModule } from '@angular/core';
+import { NgModule, importProvidersFrom } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { PerfilEstudianteComponent } from './perfil.estudiante/perfil.estudiante.component';
+
+
 
 
 const routes: Routes = [
-  {path: "login", component:LoginComponent},
-  { path: "register",component:RegisterComponent},
-  {path:"forgot-password", component:ForgotPasswordComponent}
-];
+  {path :'perfil.estudiante',component:PerfilEstudianteComponent },
+  {path:'estudiante',loadChildren:()=>import('./estudiante/estudiante.module').then(val => val.estudianteModule)},
+  {path:'**',pathMatch:'full',redirectTo:'perfil-estudiante'}
+]; 
 
 @NgModule({
-
-  imports: [ RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),RouterModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

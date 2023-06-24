@@ -1,30 +1,32 @@
-import { NgModule } from '@angular/core';
+import { NgModule,NO_ERRORS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http'
+import { RouterModule } from '@angular/router';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeadersComponent } from './headers/headers.component';
-import { FooterComponent } from './footer/footer.component';
-import { SearchComponent } from './search/search.component';
-import { CoursesComponent } from './courses/courses.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { PerfilEstudianteComponent } from './perfil.estudiante/perfil.estudiante.component';
+
+
+
 
 @NgModule({
+  schemas:[
+    NO_ERRORS_SCHEMA
+  ],
   declarations: [
     AppComponent,
-    HeadersComponent,
-    FooterComponent,
-    SearchComponent,
-    CoursesComponent,
-    LoginComponent,
-    RegisterComponent,
-    ForgotPasswordComponent
+    PerfilEstudianteComponent,
+    
+   
+   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
